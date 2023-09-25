@@ -19,10 +19,24 @@ public class Personagem{
     }
 
     void comer(){
-        System.out.println(nome + " comendo...");
+        if(fome>0){
+            System.out.println(nome + " comendo...");
+            fome--;
+            energia = Math.min(energia+1,10);
+        }
+        else{
+            System.out.println(nome + " sem fome.");
+        }
     }
 
     void dormir(){
-        System.out.println(nome + " dormindo...");
+        if(sono>0){
+            System.out.println(nome + " dormindo...");
+            sono-=1;
+            energia = Math.min(energia+1,10);
+        }
+        else{
+            System.out.println(nome + " sem sono.");
+        }
     }
 }
